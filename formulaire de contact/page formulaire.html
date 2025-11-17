@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contactez-nous</h1>
+        <nav>
+            <a href="acceuil.html">Accueil</a>
+            <a href="competences.html">Compétences</a>
+            <a href="projets.html">Projets</a>
+            <a href="formulaire.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Formulaire de demande d'information</h2>
+            <form id="contactForm">
+                <label for="nom">Nom et Prénom :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="Telephone" > Telephone</label>
+                <input type="Telephone" id="Telephone" name="telephone" required>
+
+                <label for="formation">Formation souhaitée :</label>
+                <select id="formation" name="formation">
+                    <option value="langues">Cours de langues</option>
+                    <option value="cadres">Formation des cadres</option>
+                    <option value="autre">Autre</option>
+                </select>
+
+                <label for="message">Message :</label>
+                <textarea id="message"first name="message" rows="5" required></textarea>
+
+                <button type="submit">Envoyer</button>
+                <div id="formMessage"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Formation Langues & Cadres aux PLURIELLES. Tous droits réservés.
+    </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formMessage.textContent = "Merci pour votre demande ! Nous vous répondrons bientôt.";
+            formMessage.style.color = 'green';
+            form.reset();
+        });
+    </script>
+</body>
+</html>
